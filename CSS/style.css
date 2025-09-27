@@ -25,6 +25,26 @@ header .overlay {
 header .brand {
   padding-top: 40px;
 }
+.brand-lang {
+  color: white;
+  float: left;
+  text-decoration: none;
+  padding: 5px;
+  background-color: var(--main-color);
+}
+
+.brand-lang:hover {
+  opacity: 0.9;
+  color: white;
+}
+
+.brand-lang.active {
+  font-weight: bold;
+  float: right;
+  position: relative;
+  z-index: 100000;
+}
+
 header .header-text {
   padding-top: 190px;
 }
@@ -69,6 +89,36 @@ header .product .product-label p {
   font-size: 20px;
   text-align: center;
   color: #ffffff;
+}
+@media (min-width: 768px){
+.en header .product .product-label p{
+  left: -50px;
+}
+.en header .product .product-label img{
+  left: 0;
+}
+}
+@media (min-width: 992px){
+.en header .product .product-label p{
+  left: -140px;
+}
+}
+@media (min-width: 1200px){
+.en header .product .product-label p{
+  left: -220px;
+}
+}
+@media (min-width: 1400px){
+.en header .product .product-label p{
+  left: -295px;
+}
+}
+body:not(.en) .accordion-item .accordion-header button{
+  text-align: right;
+}
+body:not(.en) .accordion-item .accordion-header button::after{
+  margin-right: auto;
+  margin-left: 0;
 }
 header .product .product-label span {
   display: block;
@@ -116,7 +166,7 @@ section.features .media .d-flex h4 {
   margin-bottom: 50px;
   border-right: 2px solid #6a3093;
 }
-section.features .media .d-flex:nth-child(odd) h4 {
+body.en section.features .media .d-flex:nth-child(odd) h4 {
   border-right: 0;
   border-left: 2px solid #6a3093;
 }
@@ -283,8 +333,11 @@ section.contact form button {
   background-color: #a044ff;
   color: #fff;
 }
-section.contact form button i {
+body.en section.contact form button i {
   margin-left: 15px;
+}
+body:not(.en) section.contact form button i {
+  margin-right: 15px;
 }
 section.contact form .invalid-feedback {
   margin-top: -15px;
@@ -378,8 +431,6 @@ footer .copyright p {
     text-align: center;
   }
 }
-
-
-
-
-
+body:not(.en) .list-inline-item:last-child{
+  margin: .5rem;
+}
